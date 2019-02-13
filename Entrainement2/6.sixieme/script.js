@@ -1,15 +1,20 @@
-document.getElementById("afficher").onclick = function() {afficher()};
-var tab = [-2,1,4];
+let tab = new Array(-2,1,4);
+let x;
 
-function soustrait(x){
-    if (x >= 2) {
-        return alert(x - 2);
+function soustraction(x){
+
+    a = x-2;
+    a = Number(a);
+    
+    if (a >= 0){
+        return alert("le resultat est "+a);
+    }else{
+        return alert("Nombre négatif!");
     }
-    else {
-        return alert("Nombre négatif !");
-    }
+ 
 }
-function afficher(){
-    alert(soustrait(tab[0]));
-    alert(soustrait(tab[2]));
+
+function affiche(){
+    soustraction(Number(tab[tab.length-3]));
+    soustraction(Number(tab[tab.length-1]));
 }
