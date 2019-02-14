@@ -1,7 +1,6 @@
+document.getElementById("nom").addEventListener("keyup", afficher);
 
-focusMethod = function getFocus() {
-  nom = document.getElementById("nom").focus();
+function afficher(){
+    x = document.getElementById("nom").value;
+    window.alert(x);
 }
-  function pop(){
-    alert("nom");
-  }
