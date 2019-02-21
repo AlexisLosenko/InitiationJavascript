@@ -91,7 +91,7 @@ var sumKeysAndValues = function(object) {
 }
 
 var removeCapitals = function(string) {
-    return 'Write your method here';
+    return string.replace(/[^h]/,""), string.replace(/[^k]/,"");
 }
 
 var roundUp = function(number) {
