@@ -2,8 +2,8 @@ let nouvelleetat,secret,motif,face,bonnepaire,carte;
 
 
 
-motif = [0,0,1,1,2,2,3,3,4,4,5,5,6,6];
-face = [0,0,0,0,0,0,0,0,0,0,0,0];
+motif = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+face = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 secret = [];
 bonnepaire = 0;
@@ -23,19 +23,19 @@ initialise();
 function maj(nbcarte){
       switch(face[nbcarte]){
         case 0:
-                carte[nbcarte].src="img/dos-bleu.png";
+                carte[nbcarte].src="img/dos.jpg";
                 break;
         case 1:
                 carte[nbcarte].src="img/animals"+motif[nbcarte]+".jpg";
                 break;
         case -1:
                 carte[nbcarte].style.visibility="hidden";
-                break;
+
       }
 }
 
 function restart(){
-        alert("bravo! Tu as tous trouvé");
+        alert("T'emballe pas, tous le monde peut y arriver");
         location.reload();
 }
 
@@ -49,29 +49,29 @@ function initialise(){
 }
 
 function controle(nbcarte){
-    if(secret.length<2){
+	if(secret.length<2){
+		if(face[nbcarte]==0){
+			face[nbcarte]=1;
+			secret.push(nbcarte);
+			maj(nbcarte);
+		}
+		if(secret.length==2){
+			var nouvelleetat=0;
+			if(motif[secret[0]]==motif[secret[1]]){
+				nouvelleetat=-1;
+				bonnepaire++;
+			}
 
-          if(face[nbcarte] == 0){
-              face[nbcarte] = 1;
-              secret.push(nbcarte);
-              maj(nbcarte);
-            }
-            if(secret.length == 2){
-                nouvelleetat = 0;
-                if(motif[secret[0]] == motif[secret[0]]);
-                nouvelleEtat = -1;
-                bonnepaire++
-              }
-              face[secret[0]] == nouvelleetat;
-              face[secret[0]] == nouvelleetat;
-
-              setTimeout(function(){
-                maj(secret[0]);
-                maj(secret[1]);
-                secret = [];
-                      if (bonnepaire == 10){
-                          restart();
-                        }
-                      },750);
-                    }
-                }
+			face[secret[0]]=nouvelleetat;
+			face[secret[1]]=nouvelleetat;
+			setTimeout(function(){
+				maj(secret[0]);
+				maj(secret[1]);
+				secret=[];
+				if(bonnepaire==8){
+					restart();
+				}
+			},750);
+		}
+	}
+}
