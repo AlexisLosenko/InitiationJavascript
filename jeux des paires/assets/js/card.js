@@ -1,8 +1,8 @@
-let nouvelleetat,secret,motif,face,bonnepaire,carte;
+let nouvelleetat,secret,numero,face,bonnepaire,carte;
 
 
 
-motif = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+numero = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
 face = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 secret = [];
@@ -26,7 +26,7 @@ function maj(nbcarte){
                 carte[nbcarte].src="img/dos.jpg";
                 break;
         case 1:
-                carte[nbcarte].src="img/animals"+motif[nbcarte]+".jpg";
+                carte[nbcarte].src="img/animals"+numero[nbcarte]+".jpg";
                 break;
         case -1:
                 carte[nbcarte].style.visibility="hidden";
@@ -40,11 +40,11 @@ function restart(){
 }
 
 function initialise(){
-      for(let position = motif.length - 1; position >=1; position--){
+      for(let position = numero.length - 1; position >=1; position--){
               let hasard = Math.floor(Math.random()*(position+1));
-              let save = motif[position];
-                motif[position] = motif[hasard];
-                motif[hasard] = save;
+              let save = numero[position];
+                numero[position] = numero[hasard];
+                numero[hasard] = save;
       }
 }
 
@@ -57,7 +57,7 @@ function controle(nbcarte){
 		}
 		if(secret.length==2){
 			var nouvelleetat=0;
-			if(motif[secret[0]]==motif[secret[1]]){
+			if(numero[secret[0]]==numero[secret[1]]){
 				nouvelleetat=-1;
 				bonnepaire++;
 			}

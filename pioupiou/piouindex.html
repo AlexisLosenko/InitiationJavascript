@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <canvas id="canvas" width="1000px" height="800px" style="border:1px solid red">
+        Votre navigature ne supporte pas le canvas.
+    </canvas>
+    <script>
+        const c = document.getElementById("canvas");
+        const ctx = c.getContext("2d");
+        const midleX = 512;
+        const leftXMidle = 431;
+        const rightXMidle = 593;
+        const legsWidth = 50;
+        const legsHeight = 100;
+        const yArms = 350;
+        const armWidth = 50;
+        const armHeight = 170;
+        // -------- BODY --------
+        ctx.beginPath();
+        ctx.fillStyle = "#a4ca39";
+        ctx.moveTo(350, 350);
+        ctx.lineTo(350, 600);
+        ctx.quadraticCurveTo(350, 650, 400, 650);
+        ctx.lineTo(635, 650);
+        ctx.quadraticCurveTo(685, 650, 685, 600);
+        ctx.lineTo(685, 350);
+        ctx.lineTo(350, 350);
+        ctx.fill();
+        // -------- HEAD --------
+        ctx.beginPath();
+        ctx.moveTo(350, 340);
+        ctx.lineTo(685, 340);
+        ctx.quadraticCurveTo(685, 165, 522, 165);
+        ctx.quadraticCurveTo(350, 165, 350, 340);
+        ctx.fill();
+        // -------- EYES --------
+        ctx.beginPath();
+        ctx.fillStyle = "white";
+        ctx.arc(leftXMidle, 263, 15, 0, Math.PI + (Math.PI * 2) / 2);
+        ctx.arc(rightXMidle, 263, 15, 0, Math.PI + (Math.PI * 2) / 2);
+        ctx.fill();
+        // -------- LEGS --------
+        ctx.beginPath();
+        ctx.fillStyle = "#a4ca39";
+        ctx.fillRect(leftXMidle - 20, 650, legsWidth, legsHeight);
+        ctx.fillRect(rightXMidle - 20, 650, legsWidth, legsHeight);
+        // -------- FOOTS --------
+        ctx.arc(
+            leftXMidle + 5,
+            650 + legsHeight,
+            25,
+            0,
+            Math.PI + (Math.PI * 0) / 2
+        );
+        ctx.arc(
+            rightXMidle + 5,
+            650 + legsHeight,
+            25,
+            0,
+            Math.PI + (Math.PI * 0) / 2
+        );
+        ctx.fill();
+        // ---------------- ARMS ----------------
+        // -------- ARMS LEFT --------
+        ctx.beginPath();
+        ctx.fillRect(290, yArms, armWidth, armHeight);
+        ctx.arc(315, yArms + armHeight, 25, 0, Math.PI + (Math.PI * 0) / 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(315, yArms, 25, Math.PI, 0);
+        ctx.fill();
+        // -------- ARMS RIGHT --------
+        ctx.beginPath();
+        ctx.fillRect(685 + 60 - armWidth, yArms, armWidth, armHeight);
+        ctx.arc(310 + 410, yArms + armHeight, 25, 0, Math.PI + (Math.PI * 0) / 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(310 + 410, yArms, 25, Math.PI, 0);
+        ctx.fill();
+        // ---------------- antennas ----------------
+        // -------- antenna LEFT --------
+        ctx.beginPath();
+        ctx.lineWidth = 10;
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#a4ca39";
+        ctx.moveTo(leftXMidle, 200);
+        ctx.lineTo(leftXMidle - 50, 130);
+        ctx.stroke();
+        // -------- antenna RIGHT --------
+        ctx.beginPath();
+        ctx.lineWidth = 10;
+        ctx.lineCap = "round";
+        ctx.moveTo(rightXMidle, 200);
+        ctx.lineTo(rightXMidle + 50, 130);
+        ctx.stroke();
+    </script>
+</body>
+
+</html>
