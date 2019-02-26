@@ -1,6 +1,6 @@
 
     "use strict";
-    let availablelettres, words, guessInput, guess, guessButton, lettresGuessed, lettresMatched, sortie, Vie, lettres, lives, currentWord, numlettresMatched, messages;
+    let availablelettres, words, guessInput, guess, guessButton, lettresGuessed, lettresMatched, sortie, vie, lettres, lives, currentWord, numlettresMatched, messages;
 
     function setup() {
 
@@ -24,10 +24,10 @@
 
 
         sortie = document.getElementById("sortie");
-        Vie = document.getElementById("Vie");
+        vie = document.getElementById("vie");
         guessInput = document.getElementById("letter");
 
-        Vie.innerHTML = 'Tu as ' + lives + ' vies restante';
+        vie.innerHTML = 'Tu as ' + lives + ' vies restante';
         sortie.innerHTML = '';
 
         document.getElementById("letter").value;
@@ -115,7 +115,7 @@
                 else {
                     lettresGuessed += guess;
                     lives--;
-                    Vie.innerHTML = 'Tu as ' + lives + ' vies restantes';
+                    vie.innerHTML = 'Tu as ' + lives + ' vies restantes';
                 }
                 if (lives === 0) gameOver();
             }
