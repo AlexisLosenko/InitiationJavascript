@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pendu</title>
+
+		<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<div class="wrapper">
+  <div class="title">
+<h1>Jeu du pendu!</h1>
+</div>
+
+<div class="input">
+<form id="pendu">
+    <input type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Propose une lettre" />
+    <input id="guess" name="guess" type="submit" value="proposer" />
+    <button id="restart" name="restart" type="button">Reset</button>
+</form>
+</div>
+
+<!-- eviter les class/ID doublon donc en français -->
+<div class="lettre">
+<ul id="lettres"></ul>
+</div>
+
+<div class="Vie">
+<p id="Vie"></p>
+</div>
+
+<div class="ouput">
+<p id="sortie" class="sortie"></p>
+</div>
+
+<script src="script.js"></script>
+
+</div>
+</body>
+</html>

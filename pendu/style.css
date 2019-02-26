@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: 200px 200px 200px;
+  grid-gap: 0;
+	padding-left: 20%;
+}
+
+.title{
+
+  grid-column-start: 2;
+  grid-column-end:2;
+  grid-row-start:1;
+  grid-row-end: 1;
+
+}
+
+.input{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-start:3;
+
+}
+
+.lettre{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.Vie{
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
+.ouput{
+  grid-column-start:3;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+ .letter {
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    margin: 0 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: white;
+}
+.current-word {
+    list-style: none;
+}
+.sortie {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.correct {
+
+    transition: all 3s ease;
+    color:black;
+}
+.error {
+    color: red;
+    opacity: 1;
+}
+.warning {
+    color: orange;
+    opacity: 1;
+}
+.win {
+    color: green;
+    opacity: 1;
+}
+.lose{
+  color:red;
+  opacity: 1;
+}
