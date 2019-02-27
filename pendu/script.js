@@ -50,12 +50,12 @@
 
     function gameOver(win) {
         if (win) {
-            sortie.innerHTML = messages.win;
-            sortie.classList.add('win');
+            output.innerHTML = messages.win;
+            output.classList.add('win');
 
         } else {
-            sortie.innerHTML = messages.lose;
-            sortie.classList.add('error');
+            output.innerHTML = messages.lose;
+            output.classList.add('error');
 
 
         }
